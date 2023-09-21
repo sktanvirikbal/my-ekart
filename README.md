@@ -3,7 +3,8 @@
 
 > eCommerce platform built with the MERN stack & Redux.
 
-<img src="./frontend/public/images/screens.png">
+<img width="990" alt="screens" src="https://github.com/sktanvirikbal/my-ekart/assets/76867083/4758a619-5a42-4123-99f4-95b2e19ebbcf">
+
 
 This project is part of my [MERN Stack From Scratch | eCommerce Platform](https://www.traversymedia.com/mern-stack-from-scratch) course. It is a full-featured shopping cart with PayPal & credit/debit payments. See it in action at https://www.proshopdemo.dev
 
