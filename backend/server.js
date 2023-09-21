@@ -33,10 +33,9 @@ app.use('/api/upload',uploadRoutes);
 
 
 
-app.get('/api/config/paypal',
-(req,res)=>res.send({clientId:
-    process.env.PAYPAL_CLIENT_ID
-}))
+app.get('/api/config/paypal', (req, res) =>
+  res.send({ clientId: process.env.PAYPAL_CLIENT_ID })
+);
 
 
 
@@ -44,8 +43,7 @@ app.get('/api/config/paypal',
 
 
 
-const __dirname=path.resolve();//set __dirname to current directory
-app.use('/uploads',express.static(path.join(__dirname,'/uploads')));
+
 
 
 if(process.env.NODE_ENV==='production')
@@ -60,10 +58,11 @@ if(process.env.NODE_ENV==='production')
 
 }
 else{
-    app.get('/',(req,res)=>{
-        res.send('API is running...');
-    
-    });
+    const __dirname = path.resolve();
+    app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
+      app.get('/', (req, res) => {
+        res.send('API is running....');
+      });
 }
 
 
@@ -79,6 +78,9 @@ else{
 // });
 app.use(notFound);
 app.use(errorHandler);
-app.listen(port,()=> console.log(`Server running on port ${port}`));
+app.listen(port, () =>
+  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${port}`)
+);
+
 
 
